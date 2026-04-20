@@ -44,14 +44,40 @@ class Graph{
         std::cout<<"посещение вершин";
 
         int step = 1;
-        int level = 0;
 
         while(!stack.empty()){
             if(verbose){ ; }
-            int currentVertex=q.front();
+            int currentVertex=stack.front();
             stack.pop();
-            if(verbose) { ; }
+            if(verbose) { 
             std::cout << currentVertex << " ";
-            if(verbose){ ; }
+            bool hasUnvisited=false;
+            for(int neighbor: adj[currentVertex]){
+                std::cout << neighbor;
+                if(visited[neighbor])
+                {
+                std::cout << "посещена";
+            }
+            else{
+                    std::cout << "Новая"
+                    hasUnvisited=true;
+                }
+            }
+            std::vector<int> neighbors;
+            for(int neighbor:adj[currentVertex]){
+                neighbors.push_back(neighbor);
+            }
+            for(int i = neighbors.size() - 1; i>=0; i--){
+                int neighbor = neighbors[i];
+                if(!visited[neighbor]){
+                    visited[neighbor]=true;
+                    stack.push(neighbor)
+                    if(verbose){ : }
+                }
+            }//for
+            step++;
+        }//while
+        std::cout<<std::endl;
+        std::cout<<"обход завершен"<<std::endl;
     }
 }

@@ -49,7 +49,7 @@ class Graph {
             std::cout << currentVertex << " ";
             if(verbose){ ; }
 
-            for(int neighbor;adj[currentVertex]){
+            for(int neighbor:adj[currentVertex]){
                 if(!visited[neighbor]){
                     visited[neighbor] = true;
                     q.push(neighbor);
@@ -60,7 +60,7 @@ class Graph {
             step++;
         }//while
                 std::cout<<std::endl;
-                std::cout<<"отказ заяв"<<sta::endl;
+                std::cout<<"отказ заяв"<<std::endl;
         }//BFS
 }; //class
 int main(){
