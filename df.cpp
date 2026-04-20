@@ -13,17 +13,19 @@ void printQueue(std::queue<int>q, const std::string label)
     std::cout<<" ]"<<std::endl;
 }
 class Graph {
-    int numVerticles;
+    int numVertices;
     std::vector<std::vector<int>> adj;
     std::vector<bool> visited;
     bool verbose;
+
+
     public:
     void addEdge(int u, int v){
         adj[v]. push_back (v);
         adj[u]. push_back (u);
     }
     Graph(int V, bool verboseMode=false){
-        numVerticles=V;
+        numVertices=V;
         adj.resize(V);
         visited.resize(V, false);
         verbose = verboseMode;
